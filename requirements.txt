@@ -1,0 +1,6 @@
+flask==2.3.3
+cloudinary==1.35.0
+mysql-connector-python==8.1.0
+pyjwt==2.8.0
+python-dotenv==1.0.0
+flask-cors==4.0.0
