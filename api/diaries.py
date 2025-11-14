@@ -1,22 +1,23 @@
-from flask import Flask, request, jsonify
+from flask import Blueprint, jsonify
 
-app = Flask(__name__)
+# 创建日记蓝图
+diaries_bp = Blueprint('diaries', __name__)
 
-@app.route('/api/diaries', methods=['GET'])
+@diaries_bp.route('/', methods=['GET'])
 def get_diaries():
+    """获取日记列表（待实现）"""
     return jsonify({
         'success': True,
-        'diaries': [],
-        'message': '获取日记列表成功'
+        'message': '日记功能开发中',
+        'data': {
+            'diaries': []
+        }
     })
 
-@app.route('/api/diaries', methods=['POST'])
+@diaries_bp.route('/', methods=['POST'])
 def create_diary():
-    data = request.get_json()
+    """创建日记（待实现）"""
     return jsonify({
         'success': True,
-        'message': '日记创建成功',
-        'data': data
+        'message': '创建日记功能开发中'
     })
-
-app = app
