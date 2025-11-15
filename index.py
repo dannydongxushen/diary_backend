@@ -20,7 +20,14 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 
 # CORS 配置
 if os.environ.get('ENVIRONMENT') == 'production':
-    CORS(app, origins=['https://smartour.netlify.app/'])
+    CORS(app, origins=[
+        'https://smartour.netlify.app',  # Netlify 前端
+        'http://localhost:3000',         # React 开发服务器
+        'http://localhost:5173',         # Vite 开发服务器
+        'http://localhost:8080',         # Vue 开发服务器
+        'http://127.0.0.1:3000',         # 本地 IP 地址
+        'http://127.0.0.1:5173',
+        'http://127.0.0.1:8080'])
 else:
     CORS(app)
 
