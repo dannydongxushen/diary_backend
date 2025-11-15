@@ -20,7 +20,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 
 # CORS 配置
 if os.environ.get('ENVIRONMENT') == 'production':
-    CORS(app, origins=['https://your-domain.com'])
+    CORS(app, origins=['https://smartour.netlify.app/'])
 else:
     CORS(app)
 
