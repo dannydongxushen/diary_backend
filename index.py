@@ -22,6 +22,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-here')
 if os.environ.get('ENVIRONMENT') == 'production':
     CORS(app, origins=[
         'https://smartour.netlify.app',  # Netlify 前端
+        'https://test-login--smartour.netlify.app/',  # Netlify 测试前端
         'http://localhost:3000',         # React 开发服务器
         'http://localhost:5173',         # Vite 开发服务器
         'http://localhost:8080',         # Vue 开发服务器
